@@ -1,6 +1,6 @@
 [<img src="https://sling.apache.org/res/logos/sling.png"/>](https://sling.apache.org)
 
-# Apache Sling Feature Launcher Maven Plugin
+ [![Build Status](https://builds.apache.org/buildStatus/icon?job=Sling/sling-feature-launcher-maven-plugin/master)](https://builds.apache.org/job/Sling/job/sling-feature-launcher-maven-plugin/job/master) [![Test Status](https://img.shields.io/jenkins/t/https/builds.apache.org/job/Sling/job/sling-feature-launcher-maven-plugin/job/master.svg)](https://builds.apache.org/job/Sling/job/sling-feature-launcher-maven-plugin/job/master/test_results_analyzer/) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 This module is part of the [Apache Sling](https://sling.apache.org) project.
 
