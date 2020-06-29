@@ -29,10 +29,10 @@
     </parent>
 
     <artifactId>feature-launcher-maven-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
-    <name>Feature Launcher Maven Plugin</name>
+    <name>Apache Sling Feature Launcher Maven Plugin</name>
 
     <prerequisites>
         <maven>${maven.version}</maven>
