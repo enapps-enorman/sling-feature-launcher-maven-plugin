@@ -34,6 +34,14 @@
 
     <name>Apache Sling Feature Launcher Maven Plugin</name>
 
+    <scm>
+        <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-feature-launcher-maven-plugin.git</connection>
+        <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-feature-launcher-maven-plugin.git</developerConnection>
+        <url>https://gitbox.apache.org/repos/asf?p=sling-feature-launcher-maven-plugin.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+
     <prerequisites>
         <maven>${maven.version}</maven>
     </prerequisites>
