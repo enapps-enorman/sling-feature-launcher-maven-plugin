@@ -27,7 +27,7 @@
     </parent>
 
     <artifactId>feature-launcher-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>Apache Sling Feature Launcher Maven Plugin</name>
@@ -36,7 +36,7 @@
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-feature-launcher-maven-plugin.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-feature-launcher-maven-plugin.git</developerConnection>
         <url>https://gitbox.apache.org/repos/asf?p=sling-feature-launcher-maven-plugin.git</url>
-        <tag>feature-launcher-maven-plugin-0.1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
