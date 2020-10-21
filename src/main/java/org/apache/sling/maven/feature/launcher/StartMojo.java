@@ -116,7 +116,13 @@ public class StartMojo extends AbstractMojo {
                 File featureFile = result.getArtifact().getFile();
                 
                 List<String> args = new ArrayList<>();
-                args.add(System.getenv("JAVA_HOME") + File.separatorChar + "bin" + File.separatorChar + "java");
+                String javahome = System.getenv("JAVA_HOME");
+                if (javahome == null || javahome.isEmpty()) {
+                	// SLING-9843 fallback to java.home system property if JAVA_HOME env variable is not set
+                	getLog().warn("The JAVA_HOME env variable was not set, falling back to the java.home system property");
+                	javahome = System.getProperty("java.home");
+                }
+				args.add(javahome + File.separatorChar + "bin" + File.separatorChar + "java");
                 args.add("-jar");
                 args.add(launcher.getAbsolutePath());
                 args.add("-f");
