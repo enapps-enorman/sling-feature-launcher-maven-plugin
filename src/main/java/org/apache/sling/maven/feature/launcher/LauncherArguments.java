@@ -23,9 +23,18 @@ import java.util.Map;
 
 public class LauncherArguments {
 
+	private String[] vmOptions = null;
     private Map<String, String> frameworkProperties = new HashMap<>();
     
-    public Map<String, String> getFrameworkProperties() {
+	public String[] getVmOptions() {
+		return vmOptions;
+	}
+
+	public void setVmOptions(String[] vmOptions) {
+		this.vmOptions = vmOptions;
+	}
+
+	public Map<String, String> getFrameworkProperties() {
         return frameworkProperties;
     }
     

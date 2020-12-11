@@ -27,6 +27,13 @@ Configure the plugin as follows:
                     <type>slingosgifeature</type>
                 </feature>
                 <launcherArguments>
+                    <!-- optionally uncomment to pass any required extra vm options -->
+                    <!--
+                    <vmOptions>
+                        <value>-Xmx512m</value>
+                        <value>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5000</value>
+                    </vmOptions>
+                    -->
                     <frameworkProperties>
                         <org.osgi.service.http.port>8080</org.osgi.service.http.port>
                     </frameworkProperties>
