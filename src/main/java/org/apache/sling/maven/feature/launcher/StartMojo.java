@@ -118,20 +118,20 @@ public class StartMojo extends AbstractMojo {
                 List<String> args = new ArrayList<>();
                 String javahome = System.getenv("JAVA_HOME");
                 if (javahome == null || javahome.isEmpty()) {
-                	// SLING-9843 fallback to java.home system property if JAVA_HOME env variable is not set
-                	getLog().warn("The JAVA_HOME env variable was not set, falling back to the java.home system property");
-                	javahome = System.getProperty("java.home");
+                    // SLING-9843 fallback to java.home system property if JAVA_HOME env variable is not set
+                    getLog().warn("The JAVA_HOME env variable was not set, falling back to the java.home system property");
+                    javahome = System.getProperty("java.home");
                 }
-				args.add(javahome + File.separatorChar + "bin" + File.separatorChar + "java");
-				// SLING-9994 - if any extra vm options were supplied, apply them here
-				String[] vmOptions = launch.getLauncherArguments().getVmOptions();
-				if (vmOptions != null) {
-					for (String vmOption : vmOptions) {
-						if (vmOption != null && !vmOption.isEmpty()) {
-							args.add(vmOption);
-						}
-					}
-				}
+                args.add(javahome + File.separatorChar + "bin" + File.separatorChar + "java");
+                // SLING-9994 - if any extra vm options were supplied, apply them here
+                String[] vmOptions = launch.getLauncherArguments().getVmOptions();
+                if (vmOptions != null) {
+                    for (String vmOption : vmOptions) {
+                        if (vmOption != null && !vmOption.isEmpty()) {
+                            args.add(vmOption);
+                        }
+                    }
+                }
                 args.add("-jar");
                 args.add(launcher.getAbsolutePath());
                 args.add("-f");
