@@ -74,6 +74,16 @@
             <version>3.6.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-interactivity-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.shared</groupId>
+            <artifactId>maven-shared-utils</artifactId>
+            <version>3.3.3</version>
+        </dependency>
         
         <dependency>
             <groupId>org.apache.maven</groupId>
