@@ -18,14 +18,23 @@ package org.apache.sling.it;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Optional;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
+
 import org.junit.jupiter.api.Test;
-import  org.apache.http.impl.client.*;
+import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
+import org.junit.jupiter.api.TestMethodOrder;
+ import  org.apache.http.impl.client.*;
 import  org.apache.http.client.methods.*;
 
+@TestMethodOrder(Alphanumeric.class)
 public class AppRunningIT {
 
     @Test
-    public void slinappIsUp() throws Exception {
+    public void aaSlingAppIsUp() throws Exception {
 
         int port = Integer.getInteger("HTTP_PORT", 8080);
 
@@ -46,4 +55,17 @@ public class AppRunningIT {
             fail("App is not yet ready, failing");
         }
     }
+
+    @Test
+    public void bbCheckLauncherCommandLineInLogs() throws Exception {
+        final String logFilename = System.getProperty("build.log.file");
+
+        // This verifies the launcherArguments vmOptions and variables from our test pom
+        final Pattern expected = Pattern.compile(".*\\-DTEST_VM_OPTION=TEST_VM_OPTION_VALUE.*\\-V, TEST_VARIABLE=TEST_VALUE.*");
+
+        try (Stream<String> lines = Files.lines(Paths.get(logFilename))) {
+            final Optional<String> expectedLine = lines.filter(line -> expected.matcher(line).matches()).findFirst();
+            assertTrue(expectedLine.isPresent(), "Expected pattern " + expected + " to be found in log file " + logFilename);
+        }
+     }
 }

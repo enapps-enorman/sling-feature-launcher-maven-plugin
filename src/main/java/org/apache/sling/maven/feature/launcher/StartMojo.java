@@ -144,13 +144,18 @@ public class StartMojo extends AbstractMojo {
                     args.add(frameworkProperty.getKey()+"="+frameworkProperty.getValue());
                 }
                 
+                for ( Map.Entry<String, String> variable : launch.getLauncherArguments().getVariables().entrySet() ) {
+                    args.add("-V");
+                    args.add(variable.getKey()+"="+variable.getValue());
+                }
+
                 // TODO - add support for all arguments supported by the feature launcher
                 ProcessBuilder pb = new ProcessBuilder(args);
                 pb.redirectOutput(Redirect.INHERIT);
                 pb.redirectInput(Redirect.INHERIT);
                 pb.directory(workDir);
                 
-                getLog().info("Starting launch with id " + launch.getId());
+                getLog().info("Starting launch with id '" + launch.getId() + "', args=" + args);
                 
                 CountDownLatch latch = new CountDownLatch(1);
                 

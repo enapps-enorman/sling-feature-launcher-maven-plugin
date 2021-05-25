@@ -37,6 +37,10 @@ Configure the plugin as follows:
                     <frameworkProperties>
                         <org.osgi.service.http.port>8080</org.osgi.service.http.port>
                     </frameworkProperties>
+                    <!-- Feature launcher variables can be set like this -->
+                    <variables>
+                        <TEST_VARIABLE>TEST_VALUE</TEST_VARIABLE>
+                    </variables>
                 </launcherArguments>
                 <startTimeoutSeconds>180</startTimeoutSeconds>
             </launch>

@@ -112,16 +112,15 @@
                                 <type>slingosgifeature</type>
                             </feature>
                             <launcherArguments>
-                                <!-- optionally uncomment to pass any required extra vm options -->
-                                <!--
                                 <vmOptions>
-                                    <value>-Xmx512m</value>
-                                    <value>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5000</value>
+                                    <value>-DTEST_VM_OPTION=TEST_VM_OPTION_VALUE</value>
                                 </vmOptions>
-                                -->
                                 <frameworkProperties>
                                     <org.osgi.service.http.port>${http.port}</org.osgi.service.http.port>
                                 </frameworkProperties>
+                                <variables>
+                                    <TEST_VARIABLE>TEST_VALUE</TEST_VARIABLE>
+                                </variables>
                             </launcherArguments>
                             <startTimeoutSeconds>180</startTimeoutSeconds>
                         </launch>
@@ -144,6 +143,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <HTTP_PORT>${http.port}</HTTP_PORT>
+                        <build.log.file>${project.build.directory}/../build.log</build.log.file>
                     </systemPropertyVariables>
                 </configuration>
                 <executions>
