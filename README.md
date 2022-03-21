@@ -26,7 +26,7 @@ Configure the plugin as follows:
                 <feature>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>org.apache.sling.starter</artifactId>
-                    <version>12-SNAPSHOT</version>
+                    <version>12</version>
                     <classifier>oak_tar</classifier>
                     <type>slingosgifeature</type>
                 </feature>
