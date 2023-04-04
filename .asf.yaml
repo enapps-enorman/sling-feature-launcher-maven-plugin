@@ -1,7 +1,17 @@
 github:
-  description: Apache Sling Feature Laucher Maven Plugin
-  homepage: https://sling.apache.org
+  description: "Apache Sling Feature Laucher Maven Plugin"
+  homepage: "https://sling.apache.org"
   labels:
-    - java
-    - sling
-    - maven
+  - "java"
+  - "sling"
+  - "maven"
+  autolink_jira:
+  - "SLING"
+  - "OAK"
+  - "JCR"
+  - "JCRVLT"
+  - "INFRA"
+  - "FELIX"
+  - "MNG"
+notifications:
+  jira_options: "link"
