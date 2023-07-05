@@ -1,5 +1,5 @@
 github:
-  description: "Apache Sling Feature Laucher Maven Plugin"
+  description: "Apache Sling Feature Launcher Maven Plugin"
   homepage: "https://sling.apache.org"
   labels:
   - "java"
